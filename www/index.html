@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="cordova.js"></script>
+  <!-- Link na CSS stil -->
+  <link href="css/glavniStil.css" type="text/css" rel="stylesheet" />
+  <!-- Link na JavaScript datoteku -->
+  <script type="text/javascript" src="js/main.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCN8myIQ9u4rjwt8tSEssloZ4qtHaIpXZs",
+      authDomain: "raspored-4a688.firebaseapp.com",
+      databaseURL: "https://raspored-4a688.firebaseio.com",
+      projectId: "raspored-4a688",
+      storageBucket: "raspored-4a688.appspot.com",
+      messagingSenderId: "945526896561",
+      appId: "1:945526896561:web:1a9ee5b05659651f496f90"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script> 
+
+
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <style>
+    #tableContainer {
+      width: 100%;
+      margin: auto auto;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  </style>
+  <title>Predložak</title>
+</head>
+
+<body>
+  <div data-role="page" id="prva">
+    <label for="email_login">
+      Username:
+    </label>
+    <input type="text" id="email_login">
+
+    <label for="password_login">
+      Password:
+    </label>
+    <input type="password" id="password_login">
+
+    <button id="logIn">Log in</button>
+
+    Nemas racun? <button id="reg"> Registriraj se</button>
+  </div>
+
+  <div data-role="page" id="druga">
+
+  </div>
+
+  <div data-role="page" id="treca">
+    <label for="name">
+      Ime:
+    </label>
+    <input type="text" id="name">
+
+    <label for="lastname">
+      Prezime:
+    </label>
+    <input type="text" id="lastname">
+
+    <label for="email_registration">
+      Email:
+    </label>
+    <input type="email" id="email_registration">
+
+    <label for="password_registration">
+      Lozinka:
+    </label>
+    <input type="password" id="password_registration">
+
+    <label for="kolegiji">
+      Odaberi kolegije:
+    </label>
+
+    <div data-role="collapsible-set">
+      <div data-role="collapsible">
+        <h4>Kolegiji - zimski Semestar</h4>
+        <p id='sklopiviPrvi'></p>
+      </div>
+    </div>
+
+    <button id="registracija">Registracija</button>
+  </div>
+
+  <div data-role="page" id="editStudent">
+    <h1>Student edit</h1>
+    <label for="txtDisplayName">Ime i prezime:</label>
+    <input type="text" id="txtDisplayName">
+    <label for="txtEmailDisabled">Email:</label>
+    <input type="text" id="txtEmailDisabled" disabled>
+    <div data-role="collapsible-set">
+      <div data-role="collapsible">
+        <h4>I. Semestar</h4>
+        <p id='sklopiviDrugi'></p>
+      </div>
+    </div>
+    <button id="btnSaveStudent">Spremi</button>
+  </div>
+
+  <div data-role="page" id="editProfessor">
+    <h1>Professor edit</h1>
+    <label for="txtDisplayName_professor">Ime i prezime:</label>
+    <input type="text" id="txtDisplayName_professor">
+    <label for="txtEmailDisabled_professor">Email:</label>
+    <input type="text" id="txtEmailDisabled_professor" disabled>
+    <div data-role="collapsible-set">
+      <div data-role="collapsible">
+        <h4>I. Semestar</h4>
+        <p id='sklopiviTreci'></p>
+      </div>
+    </div>
+    <button id="btnSaveProfessor">Spremi</button>
+  </div>
+  <div data-role="page" id='container'>
+    <button id="signout">SignOut</button>
+  </div>
+</body>
+
+</html>
